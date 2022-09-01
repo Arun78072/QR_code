@@ -25,12 +25,14 @@ import { BsCalendarEventFill } from 'react-icons/bs';
 import { BsPaypal } from 'react-icons/bs';
 import { GrBitcoin } from 'react-icons/gr';
 import { HiOutlineExternalLink } from 'react-icons/hi';
+import Test from './component/ScanBox';
 
 function App() {
   const [active, setActive] = useState('Text');
 
   return (
     <div>
+      {/* <Test /> */}
       <div className='buttons'>
         {Buttons.map((i) => {
           return (

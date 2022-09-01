@@ -4,15 +4,13 @@ import { FiDownload } from 'react-icons/fi';
 import { GrDocumentPdf } from 'react-icons/gr';
 export default function Wifi() {
     const [wifiName, setWifiName] = useState('')
-    const [encryption, setEncryption] = useState('')
+    const [encryption, setEncryption] = useState('WEP')
     const [password, setPassword] = useState('')
     const [wifiHidden, setWifiHidden] = useState('')
     const [codeValue, setCodeValue] = useState('')
     const codeGenerate = () => {
-        setCodeValue(`WIFI:S:${wifiName};T:${encryption};P:${password};H:1;;`);
+        setCodeValue(`WIFI:S:${wifiName};T:${encryption};P:${password};${wifiHidden === 'true' ? 'H:1;' : ''};`);
     }
-    // WIFI:S:stranger;T:WPA;P:password;H:1;;
-
     return (
         <section className='form_section'>
             <div className='form_box'>
@@ -21,15 +19,15 @@ export default function Wifi() {
                 <label>Encryption</label>
                 <select name="encryption" onChange={(e) => { setEncryption(e.target.value) }}>
                     <option data-type="WEP" value="WEP">WEP</option>
-                    <option data-type="WPA/WPA2" value="WPA/WPA2">WPA/WPA2</option>
-                    <option data-type="No encryption" value="No encryption">No encryption</option>
+                    <option data-type="WPA" value="WPA">WPA/WPA2</option>
+                    <option data-type="nopass" value="nopass">No encryption</option>
                 </select>
                 <label> Password</label>
                 <input type='text' placeholder={`Enter Password...`} onChange={(e) => { setPassword(e.target.value) }} />
                 <label> WiFi is hidden</label>
                 <select name="hidden" onChange={(e) => { setWifiHidden(e.target.value) }}>
-                    <option data-type="Yes" value="Yes">Yes</option>
-                    <option data-type="No" value="No">No</option>
+                    <option data-type="true" value="true">Yes</option>
+                    <option data-type="false" value="false">No</option>
                 </select>
                 <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
             </div>
@@ -44,4 +42,11 @@ export default function Wifi() {
         </section>
     )
 }
+
+
+
+
+
+
+
 

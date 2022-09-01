@@ -6,66 +6,26 @@ import { GrDocumentPdf } from 'react-icons/gr';
 export default function SiteUrl() {
     const [value, setValue] = useState('')
     const [codeValue, setCodeValue] = useState('')
-    // const [urlValue, setUrlValue] = useState(chrome.tabs)
+    // const [url, setUrl] = useState("----");
     const codeGenerate = () => {
         setCodeValue(value);
     }
-
-    // function getCurrentTabUrl(callback) {
-    //     var queryInfo = {
-    //         active: true,
-    //         currentWindow: true
-    //     };
-
-    //     chrome.tabs.getAll(queryInfo, function (tabs) {
-    //         var tab = tabs[0];
-    //         var url = tab.url;
-    //         callback(url);
-    //     });
-    // }
-
-    // function renderURL(statusText) {
-    //     // document.getElementById('status').textContent = statusText;
-    //     console.log('-+-+-+-+-+', statusText)
-    //     setUrlValue(statusText)
-    // }
-
-    // useEffect(() => {
-        
-
-    //     document.addEventListener('DOMContentLoaded', function () {
-    //         getCurrentTabUrl(function (url) {
-    //             renderURL(url);
-    //         });
-    //     });
-    // }, [])
-
-
-
-
-    // chrome.cookies.getAll({
-    //     domain: ".youtube.com"
-    //     }, function (cookies) {
-    //     for (var i = 0; i < cookies.length; i++) {
-    //     console.log(cookies[i] + "deleted");
-    //     chrome.cookies.remove({
-    //     url: "https://" + cookies[i].domain + cookies[i].path,
-    //     name: cookies[i].name
-    //     });
-    //     }
-    //     });
-
-
-
+    /**
+     * Get current URL
+     */
+    useEffect(() => {
+      const queryInfo = { active: true, lastFocusedWindow: true };
+      chrome.tabs &&
+        chrome.tabs.query(queryInfo, (tabs) => {
+          const url = tabs[0].url;
+          setValue(url);
+        });
+    }, []);
     return (
         <section className='form_section'>
-
-{/* <button onClick={getCurrentTabUrl}>get url</button> */}
-
-{/* <h1>urlValue{urlValue}</h1> */}
             <div className='form_box'>
-                <label>Enter Url</label>
-                <input type='url' placeholder={`https://url.com`} onChange={(e) => { setValue(e.target.value) }} />
+                <label>Site Url</label>
+                <input type='url' placeholder={`https://url.com`} value={value} onChange={(e) => { setValue(e.target.value) }} />
                 <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
             </div>
             <div className='code_box'>
@@ -80,3 +40,15 @@ export default function SiteUrl() {
 
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+

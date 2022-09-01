@@ -5,12 +5,11 @@ import { GrDocumentPdf } from 'react-icons/gr';
 export default function Whatsapp() {
     const [value, setValue] = useState('')
     const [message, setMessage] = useState('')
-    const [countryCode, setCountryCode] = useState('')
+    const [countryCode, setCountryCode] = useState('+91')
     const [codeValue, setCodeValue] = useState('')
     const codeGenerate = () => {
         setCodeValue(`wa.me/${countryCode}${value}?text=${message}`);
     }
-    console.log('countryCode', countryCode)
     return (
         <section className='form_section'>
             <div className='form_box'>
