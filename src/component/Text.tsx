@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import ScanBox from './ScanBox';
+import QrCode from './QrCodeBox';
+
 export default function Text() {
     const [value, setValue] = useState('')
     const [codeValue, setCodeValue] = useState('')
@@ -13,7 +14,7 @@ export default function Text() {
                 <input type='text' placeholder={`Enter your text ...`} onChange={(e) => { setValue(e.target.value) }} />
                 <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
             </div>
-            <ScanBox value={codeValue} />
+            <QrCode value={codeValue} />
         </section >
 
     )

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import QRCode from 'qrcode.react';
 import { FiDownload } from 'react-icons/fi';
 import { GrDocumentPdf } from 'react-icons/gr';
-function ScanBox({ value }: Props) {
+function QrCode({ value }: Props) {
     const [valuess, setValuess] = useState(value)
     const downloadQR = () => {
         const canvas = document.getElementById("QR-code") as HTMLCanvasElement;
@@ -36,7 +36,7 @@ function ScanBox({ value }: Props) {
     );
 }
 
-export default ScanBox;
+export default QrCode;
 type Props = {
     value: string;
 }

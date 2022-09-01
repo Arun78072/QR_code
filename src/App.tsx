@@ -25,7 +25,7 @@ import { BsCalendarEventFill } from 'react-icons/bs';
 import { BsPaypal } from 'react-icons/bs';
 import { GrBitcoin } from 'react-icons/gr';
 import { HiOutlineExternalLink } from 'react-icons/hi';
-import Test from './component/ScanBox';
+import Test from './component/QrCodeBox';
 
 function App() {
   const [active, setActive] = useState('Text');
