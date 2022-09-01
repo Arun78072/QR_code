@@ -115,6 +115,7 @@ button.submit_btn {
   font-size: 15px;
   font-weight: 600;
   margin: 10px 0px;
+  cursor: pointer;
 }
 
 /* action buttons  */
@@ -141,7 +142,10 @@ button:active {
   box-shadow: rgb(204 219 232) 0px 2px 6px 0px inset,
     rgb(255 255 255 / 50%) 0px -2px 6px 1px inset;
 }
-
+button.acive:active,
+button.submit_btn:active {
+  box-shadow: none;
+}
 p.message {
   font-size: 14px;
 }

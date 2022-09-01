@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import Text from './component/Text';
 import Sms from './component/Sms';
 import Url from './component/Url';
@@ -9,6 +9,9 @@ import Whatsapp from './component/Whatsapp';
 import Location from './component/Location';
 import Wifi from './component/Wifi';
 import Event from './component/Event';
+import Paypal from './component/Paypal';
+import Crypto from './component/Crypto';
+import SiteUrl from './component/SiteUrl';
 
 import { BiText } from 'react-icons/bi';
 import { FaSms } from 'react-icons/fa';
@@ -19,6 +22,9 @@ import { IoLogoWhatsapp } from 'react-icons/io';
 import { MdLocationPin } from 'react-icons/md';
 import { FaWifi } from 'react-icons/fa';
 import { BsCalendarEventFill } from 'react-icons/bs';
+import { BsPaypal } from 'react-icons/bs';
+import { GrBitcoin } from 'react-icons/gr';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 
 function App() {
   const [active, setActive] = useState('Text');
@@ -41,8 +47,11 @@ function App() {
                 : active === 'Whatsapp' ? <Whatsapp />
                   : active === 'Wifi' ? <Wifi />
                     : active === 'Event' ? <Event />
-                      : active === 'Location' ? <Location /> :
-                        <Text />}
+                      : active === 'Paypal' ? <Paypal />
+                        : active === 'Crypto' ? <Crypto />
+                          : active === 'Get Url' ? <SiteUrl />
+                            : active === 'Location' ? <Location /> :
+                              <Text />}
 
 
     </div>
@@ -94,6 +103,21 @@ const Buttons = [
     id: 9,
     name: 'Event',
     icon: <BsCalendarEventFill />
+  },
+  {
+    id: 10,
+    name: 'Paypal',
+    icon: <BsPaypal />
+  },
+  {
+    id: 11,
+    name: 'Crypto',
+    icon: <GrBitcoin />
+  },
+  {
+    id: 12,
+    name: 'Get Url',
+    icon: <HiOutlineExternalLink />
   },
 
 ]
