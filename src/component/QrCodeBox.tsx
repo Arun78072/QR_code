@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode.react';
-import { FiDownload } from 'react-icons/fi';
-import { GrDocumentPdf } from 'react-icons/gr';
+import { HiArrowCircleDown } from 'react-icons/hi';
 function QrCode({ value }: Props) {
     const [valuess, setValuess] = useState(value)
     const downloadQR = () => {
@@ -22,15 +21,14 @@ function QrCode({ value }: Props) {
                 <QRCode
                     id="QR-code"
                     value={value}
-                    size={220}
+                    size={247}
                     level={"H"}
                     includeMargin={true}
                 />
                 <div className='action_btn'>
-                    {/* <button><span><GrDocumentPdf /></span> Print</button> */}
-                    <button onClick={downloadQR}><span><FiDownload /></span>Download</button>
+                    <button onClick={downloadQR} className='submit_btn'><span><HiArrowCircleDown /></span>Download</button>
                 </div>
-                {/* <p className='message'>These stunts are performed by trained professionals, don't try this at home..</p> */}
+
             </div>
         </div>
     );

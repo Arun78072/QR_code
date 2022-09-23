@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import QrCode from './QrCodeBox';
+import { HiArrowCircleRight } from 'react-icons/hi'
 export default function Paypal() {
     const [type, setType] = useState('')
     const [email, setEmail] = useState('')
@@ -36,7 +37,7 @@ export default function Paypal() {
                 <label>Cancel URL</label>
                 <input type='url' placeholder={`Enter URL...`} onChange={(e) => { setCancleYou(e.target.value) }} />
 
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
 
             </div>
             <QrCode value={codeValue} />

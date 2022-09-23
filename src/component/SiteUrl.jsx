@@ -1,6 +1,7 @@
 /*global chrome*/
 import React, { useEffect, useState } from 'react'
 import QrCode from './QrCodeBox';
+import { HiArrowCircleRight } from 'react-icons/hi'
 export default function SiteUrl() {
     const [value, setValue] = useState('')
     const [codeValue, setCodeValue] = useState('')
@@ -24,7 +25,7 @@ export default function SiteUrl() {
             <div className='form_box'>
                 <label>Site Url</label>
                 <input type='url' placeholder={`https://url.com`} value={value} onChange={(e) => { setValue(e.target.value) }} />
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section>

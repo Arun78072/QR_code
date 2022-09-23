@@ -13,6 +13,7 @@ import Paypal from './component/Paypal';
 import Crypto from './component/Crypto';
 import SiteUrl from './component/SiteUrl';
 
+
 import { BiText } from 'react-icons/bi';
 import { FaSms } from 'react-icons/fa';
 import { HiLink } from 'react-icons/hi';
@@ -31,9 +32,10 @@ function App() {
   const [active, setActive] = useState('Text');
 
   return (
-    <div>
+    <div className='content_box'>
       {/* <Test /> */}
-      <div className='buttons'>
+      <div className='top_bar'>
+        <h1>QR Code Generator</h1>
         {Buttons.map((i) => {
           return (
             <button onClick={() => { setActive(i.name) }} className={active === i.name ? 'acive' : ''}><span>{i.icon}</span>{i.name}</button>
@@ -55,7 +57,7 @@ function App() {
                             : active === 'Location' ? <Location /> :
                               <Text />}
 
-
+      <p className='message'>Powered by <a href='https://delta4infotech.com/' target='blank'>Delta4 Infotech</a></p>
     </div>
   );
 }
@@ -121,5 +123,4 @@ const Buttons = [
     name: 'Get Url',
     icon: <HiOutlineExternalLink />
   },
-
 ]

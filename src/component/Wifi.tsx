@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import QrCode from './QrCodeBox';
 export default function Wifi() {
     const [wifiName, setWifiName] = useState('')
@@ -27,7 +28,7 @@ export default function Wifi() {
                     <option data-type="true" value="true">Yes</option>
                     <option data-type="false" value="false">No</option>
                 </select>
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section>

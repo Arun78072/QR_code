@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import QrCode from './QrCodeBox';
+import { HiArrowCircleRight } from 'react-icons/hi'
 
 export default function Text() {
     const [value, setValue] = useState('')
@@ -12,7 +13,7 @@ export default function Text() {
             <div className='form_box'>
                 <label>Enter Text</label>
                 <input type='text' placeholder={`Enter your text ...`} onChange={(e) => { setValue(e.target.value) }} />
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section >

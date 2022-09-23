@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import QrCode from './QrCodeBox';
 export default function Event() {
     const [eventName, setEventName] = useState('')
@@ -34,7 +35,7 @@ END:VEVENT`);
                 <input type="datetime-local" onChange={(e) => { setStartOn(e.target.value) }} />
                 <label>Start on </label>
                 <input type="datetime-local" onChange={(e) => { setEndOn(e.target.value) }} />
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section>

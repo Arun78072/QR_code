@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import QrCode from './QrCodeBox';
 export default function Location() {
     const [latitude, setLatitude] = useState('')
@@ -14,7 +15,7 @@ export default function Location() {
                 <input type='number' placeholder={`Enter Latitude...`} onChange={(e) => { setLatitude(e.target.value) }} />
                 <label>Longitude</label>
                 <input type='number' placeholder={`Enter Longitude...`} onChange={(e) => { setLongitude(e.target.value) }} />
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section>

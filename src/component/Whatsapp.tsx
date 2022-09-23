@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import QrCode from './QrCodeBox';
 export default function Whatsapp() {
     const [value, setValue] = useState('')
@@ -237,7 +238,7 @@ export default function Whatsapp() {
                 <input type='text' placeholder={`Enter message...`} onChange={(e) => { setMessage(e.target.value) }} />
 
                 <label>QR Code Settings</label>
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
             </div>
             <QrCode value={codeValue} />
         </section>

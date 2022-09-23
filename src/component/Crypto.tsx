@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import QrCode from './QrCodeBox';
 export default function Crypto() {
     const [coin, setCoin] = useState('')
@@ -26,7 +27,7 @@ export default function Crypto() {
                 <input type='number' placeholder={`Enter Price...`} onChange={(e) => { setAmount(e.target.value) }} />
                 <label>Thank you URL</label>
 
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
 
             </div>
             <QrCode value={codeValue} />

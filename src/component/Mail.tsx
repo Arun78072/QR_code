@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import QrCode from './QrCodeBox';
+import { HiArrowCircleRight } from 'react-icons/hi'
 export default function Mail() {
     const [value, setValue] = useState('')
     const [subject, setSubject] = useState('')
@@ -18,7 +19,7 @@ export default function Mail() {
                 <label>Body </label>
                 <input type='text' placeholder={`Enter your message ...`} onChange={(e) => { setMessage(e.target.value) }} />
 
-                <button onClick={codeGenerate} className='submit_btn'>Generate QR code</button>
+                <button onClick={codeGenerate} className='submit_btn'><HiArrowCircleRight />Generate QR</button>
 
 
                 {/* mailto:no-one@snai1mai1.com?subject=look at this website&body=Hi,I found this website and thought you might like it http://www.geocities.com/wowhtml/ */}
