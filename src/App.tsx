@@ -57,7 +57,7 @@ function App() {
                             : active === 'Location' ? <Location /> :
                               <Text />}
 
-      <p className='message'>Powered by <a href='https://delta4infotech.com/' target='blank'>Delta4 Infotech</a></p>
+      <p className='message'>Powered by <a href='#' target='blank'>Arun Kumar</a></p>
     </div>
   );
 }
